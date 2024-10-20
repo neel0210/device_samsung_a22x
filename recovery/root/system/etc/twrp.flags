@@ -8,13 +8,8 @@
 /nvdata       emmc     /dev/block/platform/bootdevice/by-name/nvdata    flags=display="NVDATA";backup=1;subpartitionof=/nvram;
 
 # Prism and Optics
-/optics       emmc     /dev/block/platform/bootdevice/by-name/optics    flags=backup=1;flashimg;display="Optics";
-/prism        emmc     /dev/block/platform/bootdevice/by-name/prism     flags=backup=1;flashimg;display="Prism";
-
-# /optics    ext4    /dev/block/platform/bootdevice/by-name/optics    flags=backup=1;display="Optics"
-# /optics_image  emmc    /dev/block/platform/bootdevice/by-name/optics    flags=backup=1;flashimg;display="Optics Image"
-# /prism    ext4    /dev/block/platform/bootdevice/by-name/prism    flags=backup=1;display="Prism"
-# /prism_image  emmc    /dev/block/platform/bootdevice/by-name/prism    flags=backup=1;flashimg;display="Prism Image"
+/optics       emmc     /dev/block/platform/bootdevice/by-name/optics    flags=backup=1;flashimg;display="Optics Image";
+/prism        emmc     /dev/block/platform/bootdevice/by-name/prism     flags=backup=1;flashimg;display="Prism Image";
 
 /recovery     emmc     /dev/block/platform/bootdevice/by-name/recovery  flags=backup=1;display="Recovery";flashimg;
 
@@ -22,8 +17,6 @@
 /vendor_image		emmc	/dev/block/mapper/vendor		flags=backup=0;flashimg;display="Vendor Image"
 /product_image		emmc	/dev/block/mapper/product		flags=backup=0;flashimg;display="Product Image"
 /odm_image		emmc	/dev/block/mapper/odm		flags=backup=0;flashimg;display="Odm Image"
-/system_ext_image	emmc	/dev/block/mapper/system_ext	flags=backup=0;flashimg;display="System_EXT Image"
-/vendor_dlkm_image	emmc	/dev/block/mapper/vendor_dlkm	flags=backup=0;flashimg;display="Vendor_DLKM Image"
 
 ## Internal storage (for OrangeFox)
 /storage            f2fs      /data/media/0                                                         flags=display="Internal Storage";usermrf;backup=1;fsflags="bind";removable;
