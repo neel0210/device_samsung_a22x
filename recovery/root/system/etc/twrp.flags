@@ -1,18 +1,28 @@
-/boot         emmc     /dev/block/platform/bootdevice/by-name/boot      flags=backup=1;display="Boot";flashimg;
-/cache        ext4     /dev/block/platform/bootdevice/by-name/cache     flags=backup=1;display="Cache";
-/efs          ext4     /dev/block/platform/bootdevice/by-name/sec_efs   flags=backup=1;display="EFS";
+#
+/cache        ext4     /dev/block/by-name/cache     flags=backup=1;display="Cache";
+/efs          ext4     /dev/block/by-name/sec_efs   flags=backup=1;display="EFS";
+/recovery     emmc     /dev/block/by-name/recovery  flags=backup=1;display="Recovery";flashimg;
+/boot         emmc     /dev/block/by-name/boot      flags=backup=1;display="Boot";flashimg;
+/up_param           emmc         /dev/block/by-name/up_param         flags=display="Up Param";backup=1;
 
 #
-/nvram        emmc     /dev/block/platform/bootdevice/by-name/nvram     flags=display="NVRAM";backup=1;
-/nvcfg        emmc     /dev/block/platform/bootdevice/by-name/nvcfg     flags=display="NVCFG";backup=1;subpartitionof=/nvram;
-/nvdata       emmc     /dev/block/platform/bootdevice/by-name/nvdata    flags=display="NVDATA";backup=1;subpartitionof=/nvram;
+/nvram        emmc     /dev/block/by-name/nvram     flags=display="NVRAM";backup=1;
+/nvcfg        emmc     /dev/block/by-name/nvcfg     flags=display="NVCFG";backup=1;subpartitionof=/nvram;
+/nvdata       emmc     /dev/block/by-name/nvdata    flags=display="NVDATA";backup=1;subpartitionof=/nvram;
 
 # Prism and Optics
-/optics       emmc     /dev/block/platform/bootdevice/by-name/optics    flags=backup=1;flashimg;display="Optics Image";
-/prism        emmc     /dev/block/platform/bootdevice/by-name/prism     flags=backup=1;flashimg;display="Prism Image";
+/prism              ext4         /dev/block/by-name/prism            flags=display="Prism";
+/prism_image        emmc         /dev/block/by-name/prism            flags=display="Prism Image";backup=1;flashimg=1;
+/optics             ext4         /dev/block/by-name/optics           flags=display="Optics";
+/optics_image       emmc         /dev/block/by-name/optics           flags=display="Optics Image";backup=1;flashimg=1;
 
-/recovery     emmc     /dev/block/platform/bootdevice/by-name/recovery  flags=backup=1;display="Recovery";flashimg;
+# Direct image wipeing
+/system             ext4         /dev/block/mapper/system            flags=display="System";wipeingui;
+/odm                ext4         /dev/block/mapper/odm               flags=display="ODM";wipeingui;
+/product            ext4         /dev/block/mapper/product           flags=display="Product";wipeingui;
+/vendor             ext4         /dev/block/mapper/vendor            flags=display="Vendor";wipeingui;
 
+# Logical Partitions
 /system_image		emmc	/dev/block/mapper/system		flags=backup=0;flashimg;display="System Image"
 /vendor_image		emmc	/dev/block/mapper/vendor		flags=backup=0;flashimg;display="Vendor Image"
 /product_image		emmc	/dev/block/mapper/product		flags=backup=0;flashimg;display="Product Image"
