@@ -166,21 +166,12 @@ TW_CUSTOM_CPU_POS := "300"
 TW_CUSTOM_CLOCK_POS := "70"
 TW_CUSTOM_BATTERY_POS := "790"
 
-# MISC
-AB_OTA_UPDATER := false
-BOARD_ROOT_EXTRA_FOLDERS := cache carrier data_mirror efs keyrefuge linkerconfig metadata omr optics prism spu
-BOARD_SUPPRESS_SECURE_ERASE := true
-
-# 64-BIT
-TARGET_USES_64_BIT_BINDER := true
-TARGET_SUPPORTS_64_BIT_APPS := true
-
 # TWRP
 TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
 
 # FASTBOOT
-# TW_INCLUDE_FASTBOOTD := false
-# TW_INCLUDE_FASTBOOT := false
+TW_INCLUDE_FASTBOOTD := true
+TW_INCLUDE_FASTBOOT := true
 
 # Disable Vibration
 TW_NO_HAPTICS := true

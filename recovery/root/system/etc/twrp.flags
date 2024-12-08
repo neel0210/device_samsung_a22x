@@ -11,9 +11,10 @@
 /nvdata       emmc     /dev/block/by-name/nvdata    flags=display="NVDATA";backup=1;subpartitionof=/nvram;
 
 # Prism and Optics
-/prism              ext4         /dev/block/by-name/prism            flags=display="Prism";
+# /prism              ext4         /dev/block/by-name/prism            flags=display="Prism";
+# /optics             ext4         /dev/block/by-name/optics           flags=display="Optics";
+
 /prism_image        emmc         /dev/block/by-name/prism            flags=display="Prism Image";backup=1;flashimg=1;
-/optics             ext4         /dev/block/by-name/optics           flags=display="Optics";
 /optics_image       emmc         /dev/block/by-name/optics           flags=display="Optics Image";backup=1;flashimg=1;
 
 # Direct image wipeing
