@@ -17,18 +17,6 @@
 /prism_image        emmc         /dev/block/by-name/prism            flags=display="Prism Image";backup=1;flashimg=1;
 /optics_image       emmc         /dev/block/by-name/optics           flags=display="Optics Image";backup=1;flashimg=1;
 
-# Direct image wipeing
-/system             ext4         /dev/block/mapper/system            flags=display="System";wipeingui;
-/odm                ext4         /dev/block/mapper/odm               flags=display="ODM";wipeingui;
-/product            ext4         /dev/block/mapper/product           flags=display="Product";wipeingui;
-/vendor             ext4         /dev/block/mapper/vendor            flags=display="Vendor";wipeingui;
-
-# Logical Partitions
-/system_image		emmc	/dev/block/mapper/system		flags=backup=0;flashimg;display="System Image"
-/vendor_image		emmc	/dev/block/mapper/vendor		flags=backup=0;flashimg;display="Vendor Image"
-/product_image		emmc	/dev/block/mapper/product		flags=backup=0;flashimg;display="Product Image"
-/odm_image		emmc	/dev/block/mapper/odm		flags=backup=0;flashimg;display="Odm Image"
-
 ## Internal storage (for OrangeFox)
 /storage            f2fs      /data/media/0                                                         flags=display="Internal Storage";usermrf;backup=1;fsflags="bind";removable;
 
