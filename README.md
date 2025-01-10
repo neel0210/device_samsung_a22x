@@ -42,9 +42,10 @@ Make sure you have the necessary build environment set up
 
 1. **Preparation:**
    ```bash
-   source build/envsetup.sh  # Source the build environment setup script
-   export ALLOW_MISSING_DEPENDENCIES=true  # Necessary step, allows building with missing dependencies and minimal manifest
-   lunch twrp_a22x-eng  # Choose the appropriate device/variant for your a22x
+   git clone https://github.com/SMA226B/twrp_device_samsung_a22x.git device/samsung/a22x
+   source build/envsetup.sh
+   export ALLOW_MISSING_DEPENDENCIES=true
+   lunch twrp_a22x-eng
    ```
 
 2. **Build Recovery Image:**
