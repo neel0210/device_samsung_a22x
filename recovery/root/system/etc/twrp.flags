@@ -11,6 +11,12 @@
 /nvcfg        emmc     /dev/block/by-name/nvcfg     flags=display="NVCFG";backup=1;subpartitionof=/nvram;
 /nvdata       emmc     /dev/block/by-name/nvdata    flags=display="NVDATA";backup=1;subpartitionof=/nvram;
 
+# Linking
+/system_image		emmc	/dev/block/mapper/system		flags=backup=0;flashimg;display="System Image"
+/vendor_image		emmc	/dev/block/mapper/vendor		flags=backup=0;flashimg;display="Vendor Image"
+/product_image		emmc	/dev/block/mapper/product		flags=backup=0;flashimg;display="Product Image"
+/odm_image		emmc	/dev/block/mapper/odm		flags=backup=0;flashimg;display="Odm Image"
+
 # Prism and Optics
 /prism_image        emmc         /dev/block/by-name/prism            flags=display="Prism Image";backup=1;flashimg=1;
 /optics_image       emmc         /dev/block/by-name/optics           flags=display="Optics Image";backup=1;flashimg=1;
